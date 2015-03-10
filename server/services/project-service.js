@@ -17,6 +17,16 @@ module.exports = {
         setTimeout(function () {
             callback(null, JSON.parse(JSON.stringify(serverData)));
         }, 10);
+    }, 
+
+    create: function(req, resource, params, body, config, callback) {
+        serverData.push({
+            projectName: params.projectName,
+            projectDesc: params.projectDesc
+        });
+        setTimeout(function () {
+            callback(null, serverData);
+        }, 10);
     }
 
 };
