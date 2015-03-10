@@ -1,13 +1,13 @@
 "use strict";
 
-var React                 = require('react');
-var cx                    = React.addons.classSet;
-var FluxibleMixin         = require('fluxible').Mixin;
-var ProjectStore          = require('../../stores/project-store');
+var React          = require('react');
+var cx             = React.addons.classSet;
+var FluxibleMixin  = require('fluxible').Mixin;
+var ProjectStore   = require('../../stores/project-store');
 
 var ProjectList = React.createClass({
 
-    mixins: [FluxibleMixin],
+    mixins: [ FluxibleMixin ],
 
     statics: {
         storeListeners: [ ProjectStore ]
@@ -29,21 +29,15 @@ var ProjectList = React.createClass({
 
     render: function () {
 
-        var classes = cx({
-            'projectList': true,
-            'hidden-xs': this.props.hideOnMobile
-        });
-        
         return (
-            <div className={classes}>
-                <h2 className="sectionHeading">Projects.</h2>
-                <ul className="projectList-ul">
+            <div className="projectList">
+                <div className="row">
                     {this.state.projects.map(function (project, i) {
                         return (
                             <Project project={project} key={i} />
                         );
                     })}
-                </ul>
+                </div>
             </div>
         );
     }
@@ -53,13 +47,24 @@ var Project = React.createClass({
 
     render: function () {
 
+        var classes = cx({
+            'project': true,
+            'col-sm-4': true,
+            'col-md-3': true,
+            'hidden-sm': this.props.index > 2,
+            'hidden-xs': this.props.index > 2
+        });
+
         var p = this.props.project;
 
+        // TODO: Add Read More assignment using state and classSet
         return (
-            <li>
-                {p.projectName}
-                <ul><li>{p.projectDesc}</li></ul>
-            </li>
+            <div className={classes}>
+                <figure>
+                    <img src={p.projectImg} />
+                    <figcaption>{p.projectName}</figcaption>
+                </figure>
+            </div>
         );
     }
 });

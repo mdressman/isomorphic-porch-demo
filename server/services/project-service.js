@@ -22,7 +22,7 @@ module.exports = {
     create: function(req, resource, params, body, config, callback) {
         serverData.push({
             projectName: params.projectName,
-            projectDesc: params.projectDesc
+            projectImg: params.projectImg
         });
         setTimeout(function () {
             callback(null, serverData);

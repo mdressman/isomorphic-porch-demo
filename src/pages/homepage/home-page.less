@@ -1,1 +1,44 @@
-.homePage {}
+body {
+    background: rgb(242, 242, 242);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(66, 66, 66);
+}
+
+h1 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    font-style: 3.2rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.homePage-footer {
+    margin-top: 30px;
+    border-top: 1px solid rgb(226, 226, 226);
+    font-size: 1rem;
+    letter-spacing: 120%;
+    color: rgb(162, 162, 162);
+
+    a {
+        color: rgb(162, 162, 162);
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.homePage-footer--left {
+    float: left;
+    a {
+        padding-right: 14px;
+        text-decoration: none;
+    }
+}
+
+.homePage-footer--right {
+    float: right;
+}

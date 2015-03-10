@@ -8,28 +8,49 @@ var ProjectForm = React.createClass({
 
     mixins: [FluxibleMixin],
 
+    getInitialState: function() {
+        return {
+            value: ''
+        };
+    },
+
     submitForm: function (e) {
         e.preventDefault();
 
+        // TODO: Add form validation assignment w instructions
+
         var formData = {
-            projectName: this.refs['projectName'].getDOMNode().value.trim(),
-            projectDesc: this.refs['projectDesc'].getDOMNode().value.trim()
+            projectName: this.state.value,
+            projectImg: "http://placehold.it/546x408"
         };
 
         this.executeAction(createProject, formData);
+        this.setState({ value: '' });
     },
+
+    handleChange: function(e) {
+        e.preventDefault();
+        this.setState({ value: e.target.value });
+    },
+
     render: function () {
 
         return (
-            <div className="createProject">
+            <div className="row">
+                <div className="col-sm-12">
 
-                <h2 className="sectionHeading">Create a project!</h2>
-
-                <form className="createProject-form" onSubmit={this.submitForm}>
-                    <input ref="projectName" placeholder="Project Name" />
-                    <input ref="projectDesc" placeholder="Project Description" />
-                    <button type="submit">Do it!</button>
-                </form>
+                    <form onSubmit={this.submitForm}>
+                        <input
+                            ref="projectName"
+                            placeholder="Add a project!"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                        />
+                        <button className="btn projectForm-button" type="submit">
+                            >
+                        </button>
+                    </form>
+                </div>
             </div>
         );
     }

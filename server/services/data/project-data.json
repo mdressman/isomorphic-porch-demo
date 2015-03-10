@@ -1,18 +1,20 @@
 [
     {
-        "projectName": "Dream bathroom Members Club, Myrtle Beach, SC ",
-        "projectDesc": "Design and install dream bathroom"
+        "projectName": "Highlands Residence Outdoor Remodel",
+        "projectImg": "http://i0.staticp.com/api/image/display/a546x408/036e70880c13f97b24167b8f65bbe388.jpg"
+
     },
     {
-        "projectName": "Bathroom Remodel",
-        "projectDesc": "bathroom remodel and tile work on a home"
+        "projectName": "Seattle Highrise Condo",
+        "projectImg": "http://i0.staticp.com/api/image/display/a546x408/b5b0e423f9d75366be5e97a702633acb.jpg"
     },
     {
-        "projectName": "Shower install",
-        "projectDesc": "Install shower with body sprays"
+        "projectName": "Granite Counters",
+        "projectImg": "http://i0.staticp.com/api/image/display/a546x408/d73b73b76448d126e66376eed2c5b2a4.jpg"
+
     },
     {
-        "projectName": "Custom tile shower ",
-        "projectDesc": "Custom tile shower with multi function shower"
+        "projectName": "Immel Kitchen",
+        "projectImg": "http://i0.staticp.com/api/image/display/a546x408/980f57e6c8f846e0c58f3b5c236d1858.jpg"
     }
 ]
