@@ -20,4 +20,7 @@ app.plug(routrPlugin({
   routes: require('./routes')
 }));
 
+// Register required stores
+app.registerStore(require('../src/stores/project-store'));
+
 module.exports = app;
