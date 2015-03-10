@@ -20,7 +20,7 @@ module.exports = {
     }, 
 
     create: function(req, resource, params, body, config, callback) {
-        serverData.push({
+        serverData.unshift({
             projectName: params.projectName,
             projectImg: params.projectImg
         });

@@ -29,6 +29,8 @@ var ProjectList = React.createClass({
 
     render: function () {
 
+        // TODO: Add Delete project assignment
+
         return (
             <div className="projectList">
                 <div className="row">
