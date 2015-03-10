@@ -6,18 +6,18 @@ var sourcemaps   = require('gulp-sourcemaps');
 var source       = require('vinyl-source-stream');
 var buffer       = require('vinyl-buffer');
 var path         = require('path');
-var supervisor = require('gulp-supervisor');
-var watch = require('gulp-watch');
-var batch = require('gulp-batch');
-var jshint = require('gulp-jshint');
-var react = require('gulp-react');
-var reporter = 'jshint-stylish';
+var supervisor   = require('gulp-supervisor');
+var watch        = require('gulp-watch');
+var batch        = require('gulp-batch');
+var jshint       = require('gulp-jshint');
+var react        = require('gulp-react');
+var reporter     = 'jshint-stylish';
 var concat       = require('gulp-concat');
 var less         = require('gulp-less');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
 var mqpacker     = require('css-mqpacker');
-var del = require('del');
+var del          = require('del');
 
 ////////
 gulp.task('clean', function(callback) {
