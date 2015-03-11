@@ -125,5 +125,5 @@ gulp.task('watch', ['build', 'setWatch'], function() {
 
 ////////
 gulp.task('build', ['lintJs', 'browserify', 'less']);
-gulp.task('default', ['clean', 'build']);
+gulp.task('default', ['clean', 'build', 'watch']);
 
