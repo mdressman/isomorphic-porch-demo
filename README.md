@@ -11,6 +11,8 @@ npm install
 gulp
 ```
 
+Visit [http://localhost:9312](http://localhost:9312)
+
 ## Libraries
  - [fluxible](http://fluxible.io) - pluggable application container to facilitate an isomorphic React+Flux architecture. Developed by Yahoo. Makes use of plugins wrapping smaller core libraries:
   - [dispatchr](https://github.com/yahoo/dispatchr) - isolates dispatcher and stores per request

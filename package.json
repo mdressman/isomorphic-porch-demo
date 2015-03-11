@@ -53,7 +53,6 @@
   "dependencies": {
     "body-parser": "^1.10.0",
     "browserify": "^9.0.3",
-    "debug": "^2.1.1",
     "express": "^4.9.5",
     "flux-router-component": "^0.5.8",
     "fluxible": "^0.2.1",

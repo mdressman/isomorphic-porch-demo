@@ -9,6 +9,10 @@ var ProjectForm = React.createClass({
     mixins: [FluxibleMixin],
 
     getInitialState: function() {
+        /*
+         * The form below uses a controlled ReactElement, which means the
+         * input's value is set by the component's state.
+         */
         return {
             value: ''
         };
@@ -17,17 +21,27 @@ var ProjectForm = React.createClass({
     submitForm: function (e) {
         e.preventDefault();
 
-        // TODO: Add form validation assignment w instructions
+        /*
+         * Exercise!
+         * - Add form validation functionality and return (alert, etc.) an error
+         */
 
         var formData = {
             projectName: this.state.value,
             projectImg: "http://placehold.it/546x408"
         };
 
+        // Executes the createProject action and passes along the form data
         this.executeAction(createProject, formData);
+
+        // Resets the form input
         this.setState({ value: '' });
     },
 
+    /*
+     * Called on every change to the form's controlled input and updates the
+     * component's local state
+     */
     handleChange: function(e) {
         e.preventDefault();
         this.setState({ value: e.target.value });
@@ -46,8 +60,9 @@ var ProjectForm = React.createClass({
                             value={this.state.value}
                             onChange={this.handleChange}
                         />
-                        <button className="btn projectForm-button" type="submit">
-                            >
+                        <button
+                            className="btn projectForm-button"
+                            type="submit"> ADD
                         </button>
                     </form>
                 </div>

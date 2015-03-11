@@ -6,6 +6,10 @@ var ProjectList   = require('../../components/projects/project-list');
 var ProjectForm   = require('../../components/projects/project-form');
 var Footer        = require('../../components/footer');
 
+/*
+ * Root application component, defined in src/app.js,
+ * renders child components which is where the magic happens.
+ */
 var HomePage = React.createClass({
     mixins: [ FluxibleMixin ],
 

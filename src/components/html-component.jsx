@@ -1,15 +1,11 @@
 "use strict";
 
-var React             = require('react/addons');
-var FluxibleMixin     = require('fluxible').Mixin;
+var React         = require('react');
+var FluxibleMixin = require('fluxible').Mixin;
 
 var Html = React.createClass({
 
     mixins: [ FluxibleMixin ],
-
-    getInitialState: function () {
-        return {};
-    },
 
     render: function () {
 
@@ -26,12 +22,14 @@ var Html = React.createClass({
                 </head>
 
                 <body>
+                    {/* Inject root application component */}
                     <div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
                 </body>
 
-                {/* dehydrated json state of all the stores */}
+                {/* Exposes dehydrated json state of all the stores as window.App */}
                 <script dangerouslySetInnerHTML={{__html: this.props.state}}></script>
 
+                {/* Generated JavaScript from gulp browserify. Loads client.js */}
                 <script src="/v2/assets/bundle.js"></script>
             </html>
         );

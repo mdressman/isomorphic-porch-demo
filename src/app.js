@@ -1,26 +1,26 @@
 'use strict';
 var React        = require('react');
-var FluxibleApp  = require('fluxible');
+var Fluxible     = require('fluxible');
 var fetchrPlugin = require('fluxible-plugin-fetchr');
 var routrPlugin  = require('fluxible-plugin-routr');
 
 /*
-* This is our porch global flux app. It registers all of our pages, stores,
-* and handles the basic routing and page loading.
-*/
-var app = new FluxibleApp({
+ * Common application setup code.
+ *
+ * - Create new Fluxible app instance
+ * - Define root application component
+ * - Install plugins
+ * - Register stores
+ */
+
+var app = new Fluxible({
   component: React.createFactory(require('./pages/homepage/home-page'))
 });
 
-app.plug(fetchrPlugin({
-  xhrPath: '/napi/'
-}));
+app.plug(fetchrPlugin());
 
-app.plug(routrPlugin({
-  routes: require('./routes')
-}));
+app.plug(routrPlugin({ routes: require('./routes') }));
 
-// Register required stores
 app.registerStore(require('../src/stores/project-store'));
 
 module.exports = app;

@@ -9,6 +9,10 @@ var ProjectList = React.createClass({
 
     mixins: [ FluxibleMixin ],
 
+    /*
+     * Whenever this component hears a change emitted from a store it is
+     * listening to, it will execute the onChange handler function.
+     */
     statics: {
         storeListeners: [ ProjectStore ]
     },
@@ -17,19 +21,26 @@ var ProjectList = React.createClass({
         return this.getStateFromStores();
     },
 
+    /*
+     * Grab the current state of data from our stores
+     */
     getStateFromStores: function () {
         return {
             projects: this.getStore(ProjectStore).getProjects()
         };
     },
 
+    /*
+     * Flux magic!
+     *
+     * A store emitted a change! Update the component's state with current
+     * store data, which will trigger a re-render.
+     */
     onChange: function() {
         this.setState(this.getStateFromStores());
     },
 
     render: function () {
-
-        // TODO: Add Delete project assignment
 
         return (
             <div className="projectList">
@@ -59,7 +70,10 @@ var Project = React.createClass({
 
         var p = this.props.project;
 
-        // TODO: Add Read More assignment using state and classSet
+        /*
+         * Exercise!
+         * - Add Read More functionality using state and classSet
+         */
         return (
             <div className={classes}>
                 <figure>
